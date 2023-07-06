@@ -11,12 +11,14 @@ func main() {
 	GenarateNumberBycode(choice)
 }
 
-func GenarateNumberBycode(str string) (num int) {
+func GenarateNumberBycode(str string) {
 	total := 0
+
 	for i := 0; i < len(str); i++ {
 
 		// current คือตัวอักษร
 		current := str[i]
+
 		// ส่งสตริงไปดึงค่าจากฟังก์ชัน GetcharValue
 		currentValue := GetcharValue(current)
 
@@ -28,12 +30,9 @@ func GenarateNumberBycode(str string) (num int) {
 		}
 		total += currentValue
 	}
-
 	fmt.Println(total)
 	return
-
 }
-
 func GetcharValue(str byte) (num int) {
 	switch str {
 	case 'A':
